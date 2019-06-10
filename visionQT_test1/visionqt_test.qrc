@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/visionQT_test">
+        <file>Resources/blink.jpeg</file>
+        <file>Resources/branch-closed.png</file>
+        <file>Resources/branch-end.png</file>
+        <file>Resources/branch-more.png</file>
+        <file>Resources/branch-open.png</file>
+        <file>Resources/connected.png</file>
+        <file>Resources/disconnected.png</file>
+        <file>Resources/open.jpg</file>
+        <file>Resources/save.png</file>
+        <file>Resources/side1.png</file>
+        <file>Resources/side2.png</file>
+        <file>Resources/side3.png</file>
+        <file>Resources/side4.png</file>
+        <file>Resources/side5.png</file>
+        <file>Resources/side6.png</file>
+        <file>Resources/vision.jpg</file>
+        <file>Resources/vline.png</file>
+        <file>Resources/wheels.png</file>
+        <file>Resources/symbol.png</file>
+        <file>Resources/Grabber.png</file>
+        <file>Resources/calibration.png</file>
+        <file>Resources/align.png</file>
+        <file>Resources/preprocessing.png</file>
+        <file>Resources/processing.png</file>
+        <file>Resources/postprocessing.png</file>
+        <file>Resources/evaluate.png</file>
+        <file>Resources/communication.png</file>
+        <file>Resources/fileaccess.png</file>
+        <file>Resources/system.png</file>
+        <file>Resources/arrow.png</file>
+        <file>Resources/larrow.png</file>
+        <file>Resources/lineButton.png</file>
+        <file>Resources/rectangleButton.png</file>
+        <file>Resources/refineRectButton.png</file>
+        <file>Resources/zoom-in.png</file>
+        <file>Resources/zoom-out.png</file>
+        <file>Resources/adjustButton.png</file>
+        <file>Resources/closeButton.png</file>
+        <file>Resources/pointButton.png</file>
+        <file>Resources/circleButton.png</file>
+        <file>Resources/rarrow.png</file>
+    </qresource>
+</RCC>
