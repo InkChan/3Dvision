@@ -1,9 +1,9 @@
 #include "moudlewidget.h"
 
-MoudleWidget::MoudleWidget(QWidget *parent)
+MoudleWidget::MoudleWidget(QImage img, QWidget *parent)
 	: QWidget(parent)
 {
-	setupUi(this);
+	setupUi(img,this);
 
 	this->setStyleSheet("background-color:rgb(255, 255, 255);");
 	this->setWindowModality(Qt::ApplicationModal);
@@ -16,7 +16,7 @@ MoudleWidget::~MoudleWidget()
 
 }
 
-void MoudleWidget::setupUi(QWidget *moudleWidget)
+void MoudleWidget::setupUi(QImage img, QWidget *moudleWidget)
 {
 	this->resize(1426, 816);
 
@@ -30,8 +30,8 @@ void MoudleWidget::setupUi(QWidget *moudleWidget)
 		"}"));
 	this->connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));
 
-	QImage _img = QImage(QString("D:\\Program\\visionQT_test1\\visionQT_test1\\Resources\\average.png"));
-	graphicsScene = new MyGraphicsScene(_img, this);
+	//传图片参数
+	graphicsScene = new MyGraphicsScene(img, this);
 	graphicsView = new ImageView(graphicsScene,this);
 	graphicsView->setObjectName(QStringLiteral("graphicsView"));
 	this->connect(graphicsView, SIGNAL(mouseMove(QPointF)), graphicsScene, SLOT(MymouseMoveEvent(QPointF)));
@@ -147,6 +147,8 @@ void MoudleWidget::paintEvent(QPaintEvent *event)
 	painter->drawLine(midLine);
 }
 
+
+//插入点、线、矩形、圆等
 void MoudleWidget::buttonGroupClicked(int id)
 {    
 	QList<QAbstractButton*> buttons = toolGroup->buttons();

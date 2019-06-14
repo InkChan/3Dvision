@@ -9,6 +9,7 @@
 #include <QContextMenuEvent>
 #include <QMenu>
 #include <moudlewidget.h>
+#include <removeoutliers.h>
 
 enum SensorTool
 {

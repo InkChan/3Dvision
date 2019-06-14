@@ -224,6 +224,15 @@
     <ClCompile Include="mygraphicsrefrect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="removeoutliers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_removeoutliers.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_removeoutliers.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="visionqt_test.h">
@@ -292,6 +301,12 @@
     <CustomBuild Include="mygraphicspoint.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="removeoutliers.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="removeoutliers.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_setsensor.h">
@@ -329,6 +344,9 @@
     </ClInclude>
     <ClInclude Include="mygraphicsrefrect.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_removeoutliers.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

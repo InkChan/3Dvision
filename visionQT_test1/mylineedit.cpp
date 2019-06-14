@@ -153,14 +153,24 @@ void MyLineEdit::delet()
 
 void MyLineEdit::mouseDoubleClickEvent(QMouseEvent *e)
 {
+	QImage _img = QImage(QString("D:\\Program\\visionQT_test1\\visionQT_test1\\Resources\\average.png"));
 	switch (Tool)
 	{
 	case 0:
-
 		break;
 	case 1:
-		MoudleWidget *moudleWidget = new MoudleWidget();
+	{
+		MoudleWidget *moudleWidget = new MoudleWidget(_img);
 		moudleWidget->show();
+		break;
+	}	
+	case 4:
+	{
+		RemoveOutliers *removeOutliers = new RemoveOutliers(_img);
+		removeOutliers->show();
+		break;
+	}		
+	default:
 		break;
 	}
 }

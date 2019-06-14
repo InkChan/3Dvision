@@ -213,8 +213,6 @@ const QRect Preview::targetSquare2(const QPoint &position) const
 
 void Preview::mouseDoubleClickEvent(QMouseEvent *)
 {
-	litcontro = new LitControl();
-	litcontro->show();
 }
 
 void Preview::deleonebt(MyLineEdit * bt)

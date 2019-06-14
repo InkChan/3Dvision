@@ -14,13 +14,13 @@ class MoudleWidget : public QWidget
 	Q_OBJECT
 
 public:
-	MoudleWidget(QWidget *parent = 0);
+	MoudleWidget(QImage img, QWidget *parent = 0);
 	~MoudleWidget();
 	public slots:
 	void buttonGroupClicked(int id);
 
 protected:
-	void setupUi(QWidget *MoudleWidget);
+	void setupUi(QImage img, QWidget *MoudleWidget);
 	void paintEvent(QPaintEvent *event);
 	//void mouseMoveEvent(QMouseEvent *event);
 
@@ -39,6 +39,7 @@ private:
 	QButtonGroup *toolGroup;
 
 	QPointF startP;
+
 	//QPushButton *pointButton;
 	//QPushButton *lineButton;
 	//QPushButton *rectButton;
