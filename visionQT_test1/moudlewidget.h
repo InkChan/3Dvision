@@ -8,25 +8,32 @@
 #include "qline.h"
 #include "litcontrol.h"
 #include "imageview.h"
+#include "qhalconwindow.h"
+#include <QDesktopWidget>
+using namespace HalconCpp;
 
 class MoudleWidget : public QWidget
 {
 	Q_OBJECT
 
 public:
-	MoudleWidget(QImage img, QWidget *parent = 0);
+	MoudleWidget(HImage img, QWidget *parent = 0, int left = 400);
+	//MoudleWidget(QImage img, QWidget *parent, int left = 400);
 	~MoudleWidget();
+	void SetImage(QImage img);
+
 	public slots:
 	void buttonGroupClicked(int id);
 
+
 protected:
-	void setupUi(QImage img, QWidget *MoudleWidget);
+	void setupUi(HalconCpp::HObject img, QWidget *MoudleWidget, int left);
+	//void setupUi(QImage img, QWidget *moudleWidget, int left);
 	void paintEvent(QPaintEvent *event);
 	//void mouseMoveEvent(QMouseEvent *event);
 
 private:
 	/*Ui::MoudleWidget ui;*/
-	LitControl *litControl;				//小控件
 	QPushButton *closeButton;			//窗口关闭
 	ImageView *graphicsView;			//显示图
 	MyGraphicsScene *graphicsScene;		//场景
@@ -40,11 +47,23 @@ private:
 
 	QPointF startP;
 
-	//QPushButton *pointButton;
-	//QPushButton *lineButton;
-	//QPushButton *rectButton;
-	//QPushButton *refectButton;
-	//QPushButton *circleButton;
+	//设置qhalconWindow上部留白
+	int halconTop = 152;
+	int halconRight = 60;
+	int halconBottom = 70;
+
+	// HALCON variables
+	HalconCpp::HTuple WindowIDBuf, FGHandle, Width, Height, Area;
+	HalconCpp::HTuple ModelID, WindowWidth, WindowHeight;
+	HalconCpp::HTuple Row, Column;
+	HalconCpp::HTuple Row1, Column1, Row2, Column2;
+	HalconCpp::HTuple Rect1Row, Rect1Col, Rect2Row, Rect2Col;
+	HalconCpp::HTuple RectPhi, RectLength1, RectLength2;
+	HalconCpp::HObject Image, ImageReduced, ShapeModelImage, ShapeModel;
+	HalconCpp::HObject Rectangle0, Rectangle1, Rectangle2;
+
+
+	QHalconWindow *Disp;
 };
 
 #endif // MOUDLEWIDGET_H

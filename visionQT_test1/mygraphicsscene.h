@@ -22,9 +22,9 @@ class MyGraphicsScene : public QGraphicsScene
 
 public:
 	enum Mode{ InsertPoint, InsertLine, InsertRect, InsertRefrect, InsertCircle, None };
-	MyGraphicsScene(QImage _img, QObject *parent);
+	MyGraphicsScene(QImage _img, double, QObject *parent);
 	~MyGraphicsScene();
-
+	void setImage(QImage _img);
 	Mode myMode;						//插入类型
 
 /*protected:
@@ -47,6 +47,7 @@ private:
 	bool _pan;
 	int _panStartX, _panStartY;
 	QVector<MyGraphicsItem*> graphicsItems;
+	double fitFactor;					//图片适应比率
 	double scaleFactor;					//图片显示比率
 	double zoomInFactor;				//图片放大比率
 	double zoomOutFactor;				//图片缩小比率

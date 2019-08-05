@@ -64,7 +64,7 @@ LitControl::LitControl(QWidget *parent)
 		"}"));
 }
 
-LitControl::LitControl(QWidget *parent, int coboWid, int coboitemWidth, QStringList itemList)
+LitControl::LitControl(QWidget *parent, int coboWid, QStringList itemList)
 	:QWidget(parent)
 	, rarowSize(QSize(15, 18))
 	, larowSize(QSize(15, 18))
@@ -137,10 +137,12 @@ LitControl::~LitControl()
 
 void LitControl::setComboItm(QStringList item)
 {
-	comboItemList = QStringList()
+	/*comboItemList = QStringList()
 		<< QString::fromUtf8("<\346\234\252\350\277\236\346\216\245>")
 		<< QString::fromUtf8("<\346\220\234\347\264\242\350\256\276\345\244\207>")
 		<< QString::fromUtf8("<\344\275\277\347\224\250\347\254\254\344\270\200\344\270\252\345\217\257\347\224\250\347\233\270\346\234\272>");
+	combo->insertItems(0, comboItemList);*/
+	comboItemList = item;
 	combo->insertItems(0, comboItemList);
 }
 
@@ -180,4 +182,9 @@ void LitControl::rarowSlot()
 		combo->setCurrentIndex(index);
 		combo->setCurrentText(comboItemList[index]);
 	}	
+}
+
+QString LitControl::getStatus()
+{
+	return this->combo->currentText();
 }

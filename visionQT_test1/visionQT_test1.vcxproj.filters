@@ -233,6 +233,33 @@
     <ClCompile Include="GeneratedFiles\Release\moc_removeoutliers.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="qhalconwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_qhalconwindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_qhalconwindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="HalconRect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HalconGraphics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HalconPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HalconLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HalconCircle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HalconRotateRect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="visionqt_test.h">
@@ -307,6 +334,9 @@
     <CustomBuild Include="removeoutliers.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="qhalconwindow.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_setsensor.h">
@@ -347,6 +377,24 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_removeoutliers.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HalconRect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HalconGraphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HalconPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HalconLine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HalconCircle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HalconRotateRect.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

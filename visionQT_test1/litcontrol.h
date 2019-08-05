@@ -22,8 +22,9 @@ class LitControl : public QWidget
 
 public:
 	LitControl(QWidget *parent = 0);
-	LitControl(QWidget *parent, int coboWid, int coboitemWidth, QStringList itemList);
+	LitControl(QWidget *parent, int coboWid, QStringList itemList);
 	QSize controlSize;
+	QString getStatus();
 	virtual ~LitControl();
 
 public:

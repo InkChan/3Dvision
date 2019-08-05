@@ -258,7 +258,6 @@ void MyGraphicsRefrect::setZoom(QPointF s, QPointF e)
 
 	else if (rotateFlag == true)
 	{
-		QPointF mp1 = this->pos();
 		s.setX(s.x() - this->pos().x());
 		s.setY(s.y() - this->pos().y());
 		e.setX(e.x() - this->pos().x());

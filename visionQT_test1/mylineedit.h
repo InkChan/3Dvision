@@ -10,6 +10,10 @@
 #include <QMenu>
 #include <moudlewidget.h>
 #include <removeoutliers.h>
+#include "HalconCpp.h"
+#include "HDevThread.h"
+#include <qdir.h>
+using namespace HalconCpp;
 
 enum SensorTool
 {
@@ -49,6 +53,9 @@ public:
 
 	void setTool(SensorTool _tool);
 	void setTool(QString _toolname);
+	HalconCpp::HImage QImageToHImage(QImage *inImage);
+	QImage HImageToQImage(HalconCpp::HImage);
+	void rgb3_to_interleaved(HObject ho_ImageRGB, HObject *ho_ImageInterleaved);
 
 protected:
 	void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;

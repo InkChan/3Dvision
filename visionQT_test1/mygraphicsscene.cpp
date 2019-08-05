@@ -1,24 +1,37 @@
 #include "mygraphicsscene.h"
 
 
-MyGraphicsScene::MyGraphicsScene(QImage _img, QObject *parent)
+MyGraphicsScene::MyGraphicsScene(QImage _img, double factor, QObject *parent)
 	: QGraphicsScene(parent),
 	_pan (false),
 	scaleFactor(1.0),
 	zoomInFactor(1.05),
 	zoomOutFactor(1 / 1.05)
 {
-	if (!_img.isNull())
-	{
-		this->addPixmap(QPixmap::fromImage(_img));
-	}
+	fitFactor = factor;
+	setImage(_img);
+
+	
+	QRectF temp = this->sceneRect();
 	addRect(this->sceneRect(), QPen(QColor(100,150,255),3));
 	myMode = Mode::None;
+
+	fitSize();
 }
 
 MyGraphicsScene::~MyGraphicsScene()
 {
 
+}
+
+void MyGraphicsScene::setImage(QImage _img)
+{
+	if (!_img.isNull())
+	{
+		int i = _img.depth();
+		_img.convertToFormat(QImage::Format::Format_Mono);
+		this->addPixmap(QPixmap::fromImage(_img));
+	}
 }
 
 void MyGraphicsScene::drawItems(QPointF scenePos)
@@ -134,7 +147,6 @@ void MyGraphicsScene::MymouseMoveEvent(QPointF pos)
 	//Æ½ÒÆ³¡¾°ÔªËØ£»
 	if (_pan)
 	{
-
 		int k = (pos.x() - _panStartX);
 		int t = (pos.y() - _panStartY);
 		for each (QGraphicsItem *var in this->items())
@@ -222,7 +234,7 @@ void MyGraphicsScene::zoomOut()
 
 void MyGraphicsScene::fitSize()
 {
-	scaleFactor = 1;
+	scaleFactor = fitFactor;
 	for each (QGraphicsItem *var in this->items())
 	{
 		if (var->type() < 65536)

@@ -14,6 +14,8 @@ class ImageView : public QGraphicsView
 
 public:
 	ImageView(QGraphicsScene *scene,QWidget *parent);
+	ImageView(/*QGraphicsScene *scene, */int left, QWidget *parent);
+	QPointF getScenePos(QPoint point);
 	~ImageView();
 
 signals:

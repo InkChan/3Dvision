@@ -18,6 +18,7 @@ public:
 	void checkZoom(QPointF);
 	bool Movable();
 	void setMovable(bool);
+
 	bool Zoomable();
 	void setZoomable(bool);
 	void setZoom(QPointF,QPointF);

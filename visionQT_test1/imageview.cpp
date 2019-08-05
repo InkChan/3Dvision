@@ -15,6 +15,21 @@ ImageView::ImageView(QGraphicsScene *scene, QWidget *parent)
 	this->setSceneRect(this->rect());
 }
 
+ImageView::ImageView(int left, QWidget *parent)
+	: QGraphicsView(parent)
+{
+	this->setMouseTracking(true);
+	this->setGeometry(QRect(left, 140, parent->width() - left - 100, parent->height() - 200));
+
+	this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+	this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+	this->setStyleSheet(QLatin1String("QGraphicsView{\n"
+		"background-color:rgb(150,150,150);\n"
+		"}"));
+	this->setSceneRect(this->rect());
+}
+
 ImageView::~ImageView()
 {
 
@@ -47,3 +62,7 @@ void ImageView::mouseReleaseEvent(QMouseEvent *event)
 	event->ignore();
 }
 
+QPointF ImageView::getScenePos(QPoint point)
+{
+	return mapToScene(point);
+}
